@@ -13,6 +13,7 @@ const Index = () => {
       id: 1,
       name: 'VIP',
       price: '299 ₽',
+      oldPrice: null,
       features: [
         'Доступ к VIP зонам',
         'Приоритет в очереди',
@@ -26,6 +27,7 @@ const Index = () => {
       id: 2,
       name: 'PREMIUM',
       price: '599 ₽',
+      oldPrice: null,
       features: [
         'Все возможности VIP',
         'Команда /fly',
@@ -38,18 +40,52 @@ const Index = () => {
     },
     {
       id: 3,
-      name: 'ADMIN',
-      price: '1299 ₽',
+      name: 'ELITE',
+      price: '999 ₽',
+      oldPrice: null,
       features: [
         'Все возможности PREMIUM',
         'Расширенные команды',
         'Креатив режим',
-        'Доступ к панели',
-        '100 домов',
+        '50 домов',
         'Уникальные скины',
-        'Приоритетная поддержка'
+        'Эксклюзивные эффекты'
+      ],
+      color: 'from-yellow-500 to-orange-500'
+    },
+    {
+      id: 4,
+      name: 'ADMIN',
+      price: '1499 ₽',
+      oldPrice: null,
+      features: [
+        'Все возможности ELITE',
+        'Доступ к панели управления',
+        'Креатив режим без ограничений',
+        '100 домов',
+        'Приоритетная поддержка',
+        'Модераторские команды'
       ],
       color: 'from-orange-500 to-red-500'
+    },
+    {
+      id: 5,
+      name: 'PEGAS',
+      price: '2126 ₽',
+      oldPrice: '7777 ₽',
+      discount: 'СКИДКА',
+      features: [
+        'Все возможности ADMIN',
+        'Полный доступ к серверу',
+        'Неограниченные дома',
+        'Эксклюзивные киты',
+        'VIP саппорт 24/7',
+        'Уникальные партиклы',
+        'Доступ к закрытым мирам',
+        'Премиум статус навсегда'
+      ],
+      color: 'from-pink-500 to-purple-500',
+      featured: true
     }
   ];
 
@@ -156,19 +192,41 @@ const Index = () => {
               Разблокируй эксклюзивные возможности и стань частью элиты
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {privileges.map((privilege, idx) => (
                 <Card
                   key={privilege.id}
-                  className="corner-cut border-primary/30 bg-card/50 backdrop-blur-sm p-6 hover:neon-border transition-all animate-scale-in"
+                  className={`corner-cut border-primary/30 bg-card/50 backdrop-blur-sm p-6 hover:neon-border transition-all animate-scale-in relative ${
+                    privilege.featured ? 'md:col-span-2 lg:col-span-1 ring-2 ring-secondary' : ''
+                  }`}
                   style={{ animationDelay: `${idx * 100}ms` }}
                 >
+                  {privilege.featured && (
+                    <div className="absolute -top-3 -right-3 bg-secondary text-background px-4 py-1 rounded-full text-xs font-bold neon-border">
+                      ПОПУЛЯРНЫЙ
+                    </div>
+                  )}
+                  
                   <div className={`bg-gradient-to-br ${privilege.color} w-16 h-16 rounded-lg flex items-center justify-center mb-4 neon-border`}>
                     <Icon name="Crown" size={32} className="text-white" />
                   </div>
+                  
                   <h3 className="text-3xl font-black mb-2 text-primary">{privilege.name}</h3>
-                  <div className="text-4xl font-black mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                    {privilege.price}
+                  
+                  <div className="mb-6">
+                    {privilege.oldPrice && (
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-sm font-bold text-destructive bg-destructive/20 px-2 py-0.5 rounded">
+                          {privilege.discount}
+                        </span>
+                        <span className="text-lg text-muted-foreground line-through">
+                          {privilege.oldPrice}
+                        </span>
+                      </div>
+                    )}
+                    <div className="text-4xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                      {privilege.price}
+                    </div>
                   </div>
 
                   <ul className="space-y-3 mb-6">
