@@ -11,17 +11,18 @@ const Index = () => {
   const privileges = [
     {
       id: 1,
-      name: 'VIP',
-      price: '299 ₽',
+      name: 'КРУТОЙ',
+      price: '18 ₽',
       oldPrice: null,
+      avatar: 'https://cdn.poehali.dev/projects/6a96c73f-5a81-4b02-9ae8-4a4044541cd7/files/9a7af4b9-e5ac-4c5b-a247-c4b669572e7b.jpg',
       features: [
-        'Доступ к VIP зонам',
-        'Приоритет в очереди',
-        'Цветной ник',
-        'Уникальный префикс',
-        '10 домов'
+        'Крутой статус',
+        'Стильный префикс',
+        'Базовые команды',
+        '3 дома',
+        'Доступ к арене'
       ],
-      color: 'from-cyan-500 to-blue-500'
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       id: 2,
@@ -39,6 +40,84 @@ const Index = () => {
     },
     {
       id: 3,
+      name: 'ГЕЙМЕР',
+      price: '100 ₽',
+      oldPrice: null,
+      avatar: 'https://cdn.poehali.dev/projects/6a96c73f-5a81-4b02-9ae8-4a4044541cd7/files/76620bd0-4973-4ed9-8853-7fac372726f9.jpg',
+      features: [
+        'Геймерский статус',
+        'RGB эффекты',
+        'Команда /game',
+        '15 домов',
+        'Доступ к турнирам',
+        'Эксклюзивные скины'
+      ],
+      color: 'from-pink-500 to-purple-500'
+    },
+    {
+      id: 4,
+      name: 'ПРОГРАММИСТ',
+      price: '130 ₽',
+      oldPrice: null,
+      avatar: 'https://cdn.poehali.dev/projects/6a96c73f-5a81-4b02-9ae8-4a4044541cd7/files/600c028a-34cd-44d7-973d-4a9882ba7fcb.jpg',
+      features: [
+        'Матричные эффекты',
+        'Команда /code',
+        'Хакерский префикс',
+        '20 домов',
+        'Доступ к редстоуну',
+        'Командные блоки'
+      ],
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      id: 5,
+      name: 'VIP',
+      price: '299 ₽',
+      oldPrice: null,
+      features: [
+        'Доступ к VIP зонам',
+        'Приоритет в очереди',
+        'Цветной ник',
+        'Уникальный префикс',
+        '10 домов'
+      ],
+      color: 'from-cyan-500 to-blue-500'
+    },
+    {
+      id: 6,
+      name: 'ЭНЕРГЕТИК',
+      price: '300 ₽',
+      oldPrice: null,
+      avatar: 'https://cdn.poehali.dev/projects/6a96c73f-5a81-4b02-9ae8-4a4044541cd7/files/176f9bf3-2ce1-4cda-92a4-a148317b3c16.jpg',
+      features: [
+        'Молниеносная скорость',
+        'Электрические эффекты',
+        'Команда /boost',
+        '30 домов',
+        'Бесконечная энергия',
+        'Двойной опыт'
+      ],
+      color: 'from-yellow-400 to-orange-500'
+    },
+    {
+      id: 7,
+      name: 'КОРОЛЬ',
+      price: '405 ₽',
+      oldPrice: null,
+      avatar: 'https://cdn.poehali.dev/projects/6a96c73f-5a81-4b02-9ae8-4a4044541cd7/files/9e1782d2-3303-40c4-8255-1e060557e5b2.jpg',
+      features: [
+        'Королевская корона',
+        'Золотые эффекты',
+        'Команда /king',
+        '50 домов',
+        'Королевские привилегии',
+        'Тронный зал'
+      ],
+      color: 'from-yellow-500 to-amber-600'
+    },
+    {
+      id: 8,
       name: 'PREMIUM',
       price: '599 ₽',
       oldPrice: null,
@@ -53,25 +132,39 @@ const Index = () => {
       color: 'from-purple-500 to-pink-500'
     },
     {
-      id: 4,
+      id: 9,
+      name: 'ДРАГОН',
+      price: '600 ₽',
+      oldPrice: null,
+      avatar: 'https://cdn.poehali.dev/projects/6a96c73f-5a81-4b02-9ae8-4a4044541cd7/files/8e488384-13fb-4b50-b88b-3f51f2f25c18.jpg',
+      features: [
+        'Драконья сила',
+        'Огненные эффекты',
+        'Команда /dragon',
+        '60 домов',
+        'Полет дракона',
+        'Драконье дыхание'
+      ],
+      color: 'from-red-600 to-orange-600'
+    },
+    {
+      id: 10,
       name: 'ТАНОС',
-      price: '666 000 ₽',
+      price: '666 ₽',
       oldPrice: null,
       features: [
         'Абсолютная мощь',
-        'Все камни бесконечности',
+        'Камни бесконечности',
         'Щелчок /snap',
-        'Бессмертие',
-        'Неограниченные ресурсы',
         'Контроль реальности',
-        'Телепортация в любую точку',
-        'VIP саппорт моментально'
+        '66 домов',
+        'Телепортация'
       ],
       color: 'from-purple-600 to-violet-900',
       featured: true
     },
     {
-      id: 5,
+      id: 11,
       name: 'ELITE',
       price: '999 ₽',
       oldPrice: null,
@@ -86,7 +179,24 @@ const Index = () => {
       color: 'from-yellow-500 to-orange-500'
     },
     {
-      id: 6,
+      id: 12,
+      name: 'ИМПЕРАТОР',
+      price: '1 000 ₽',
+      oldPrice: null,
+      avatar: 'https://cdn.poehali.dev/projects/6a96c73f-5a81-4b02-9ae8-4a4044541cd7/files/09577952-ce4a-4920-b8df-c05dc5de9998.jpg',
+      features: [
+        'Императорская власть',
+        'Имперские эффекты',
+        'Команда /emperor',
+        '100 домов',
+        'Абсолютный контроль',
+        'Имперская гвардия',
+        'VIP поддержка'
+      ],
+      color: 'from-red-600 to-amber-600'
+    },
+    {
+      id: 13,
       name: 'ГИДРА',
       price: '1 000 ₽',
       oldPrice: null,
@@ -101,7 +211,7 @@ const Index = () => {
       color: 'from-red-600 to-red-900'
     },
     {
-      id: 7,
+      id: 14,
       name: 'PEGAS',
       price: '2 126 ₽',
       oldPrice: '7777 ₽',
@@ -118,7 +228,7 @@ const Index = () => {
       color: 'from-pink-500 to-purple-500'
     },
     {
-      id: 8,
+      id: 15,
       name: 'КОБРА',
       price: '5 000 ₽',
       oldPrice: null,
@@ -134,7 +244,7 @@ const Index = () => {
       color: 'from-lime-500 to-green-600'
     },
     {
-      id: 9,
+      id: 16,
       name: 'ADMIN',
       price: '7 777 ₽',
       oldPrice: null,
@@ -269,9 +379,15 @@ const Index = () => {
                     </div>
                   )}
                   
-                  <div className={`bg-gradient-to-br ${privilege.color} w-16 h-16 rounded-lg flex items-center justify-center mb-4 neon-border`}>
-                    <Icon name="Crown" size={32} className="text-white" />
-                  </div>
+                  {privilege.avatar ? (
+                    <div className="w-16 h-16 rounded-lg mb-4 neon-border overflow-hidden">
+                      <img src={privilege.avatar} alt={privilege.name} className="w-full h-full object-cover" />
+                    </div>
+                  ) : (
+                    <div className={`bg-gradient-to-br ${privilege.color} w-16 h-16 rounded-lg flex items-center justify-center mb-4 neon-border`}>
+                      <Icon name="Crown" size={32} className="text-white" />
+                    </div>
+                  )}
                   
                   <h3 className="text-3xl font-black mb-2 text-primary">{privilege.name}</h3>
                   
